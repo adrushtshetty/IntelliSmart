@@ -7,7 +7,7 @@ def home():
 
 @app.route('/EnggMechanics')
 def mechTXT():
-    return redirect(url_for('MechChapter3'))
+    return render_template("mechTXT.html")
 
 @app.route('/EnggMechanics', methods=['POST'])
 def mechQS():
