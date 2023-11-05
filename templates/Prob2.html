@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/assetsTextBk/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="static/assetsTextBk/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/assetsTextBk/css/bootstrap.min.css">
+      <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="static/assetsTextBk/css/style.css">
+
+    <title>Engineering Mechanics  </title>
+  </head>
+  <body>
+  
+
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="static/assetsTextBk/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3>Engineering Mechanics</h3>
+                <br>
+              <p class="mb-4">Kindly choose your specific problem, and we will promptly load the corresponding question for your convenience.</p>
+            </div>
+            <form action="{{ url_for('prpbSlc')}}" method="post" >
+              <div class="form-group first">
+
+                 <h5 >Chapter</h5>
+                <select id="txtbook" name="txtbook">
+                  <option value="Meriam8th">Chapter 2 - Force Systems</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group last mb-4">
+                <h5 >Problem</h5>
+                <select id="prob" name="prob">
+                  <option value="1">Problem 2/1</option>
+                  <option value="2">Problem 2/2</option>
+                  <option value="23">Problem 2/23</option>
+                  <option value="0">Problem 2/...</option>
+                </select>
+              </div>
+              <input type="submit" value="Solve" class="btn btn-block btn-primary">
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <script src="static/assetsTextBk/js/jquery-3.3.1.min.js"></script>
+    <script src="static/assetsTextBk/js/popper.min.js"></script>
+    <script src="static/assetsTextBk/js/bootstrap.min.js"></script>
+    <script src="static/assetsTextBk/js/main.js"></script>
+  </body>
+</html>
