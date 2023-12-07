@@ -16,13 +16,32 @@ def mechQS():
         return redirect(url_for('EnggMechanicsP2_23'))
     elif n=="3":
         return redirect(url_for('MechChapter3'))
+    elif n=="A":
+        return redirect(url_for('MechChapterA'))
     else:
-        return redirect(url_for('home'))
+        return redirect(url_for('notDone'))
 
 
 @app.route('/EnggMechanicsP3')
 def MechChapter3():
     return render_template("Prob3.html")
+
+@app.route('/EnggMechanicsA')
+def MechChapterA():
+    return render_template("ChapterA.html")
+
+@app.route('/EnggMechanicsA', methods=['POST'])
+def prpbSlcA():
+    n=request.form['prob']
+    if n=="3":
+        return redirect(url_for('a_3'))
+    else:
+        return redirect(url_for('notDone'))
+
+@app.route('/EnggMechanicA_3')
+def a_3():
+    return render_template("A-3.html")
+
 
 @app.route('/EnggMechanicsP3', methods=['POST'])
 def prpbSlc3():
@@ -40,6 +59,10 @@ def p3_3():
 def cs3_3():
     return render_template("Cust3-3.html")
 
+@app.route('/EnggMechanicsCustA-3')
+def csa_3():
+    return render_template("CustA-3.html")
+
 @app.route('/EnggChemistry')
 def chem():
     return render_template("PC404.html")
@@ -52,6 +75,19 @@ def math():
 def epd():
     return render_template("P404.html")
 
+@app.route('/EnggMechanicsCustA-3',methods=['POST'])
+def inputcsA_3():
+    A = float(request.form['area'])
+    Iy = float(request.form['Iy'])
+    kx=float(request.form['kx'])
+    if A==0.0:
+        chk="zeroError"
+        return render_template("CustA-3.html",error='{}'.format(chk))
+    else:
+        Ix=(A*(kx**2))
+        Iz=Ix+(Iy*1000)
+        kz=(Iz/A)**0.5
+        return render_template("CSA-3.html",SIy='{}'.format(Iy),SIx='{}'.format(Ix),SA='{}'.format(A),Skx='{}'.format(kx),SIz='{}'.format(Iz),Skz='{}'.format(kz))
 
 
 @app.route('/EnggMechanicsCust3-3',methods=['POST'])
@@ -69,6 +105,10 @@ def inputcs3_3():
 @app.route('/EnggMechanicTXT3_3')
 def txt3_3():
     return render_template("TxtBook3-3.html")
+
+@app.route('/EnggMechanicTXTA_3')
+def txtA_3():
+    return render_template("TxtBookA-3.html")
 
 @app.route('/EnggMechanicsP')
 def EnggMechanicsP2_23():

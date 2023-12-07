@@ -38,25 +38,24 @@
               <div class="mb-4">
               <h3>Engineering Mechanics</h3>
                 <br>
-              <p class="mb-4">Kindly choose your textbook and specific chapter, and we will promptly load the corresponding question for your convenience.</p>
+              <p class="mb-4">Kindly choose your specific problem, and we will promptly load the corresponding question for your convenience.</p>
             </div>
-            <form action="{{ url_for('mechQS')}}" method="POST" >
+            <form action="{{ url_for('prpbSlcA')}}" method="post" >
               <div class="form-group first">
 
-                 <h5 >Textbooks</h5>
+                 <h5 >Chapter</h5>
                 <select id="txtbook" name="txtbook">
-                  <option value="Meriam8th">Engineering Mechanics Statics Meriam J, Kraige L, Bolton N</option>
+                  <option value="Meriam8th">Chapter A - Area Moment of Inertia</option>
                 </select>
               </div>
               <br>
               <div class="form-group last mb-4">
-                <h5 >Chapter</h5>
+                <h5 >Problem</h5>
                 <select id="prob" name="prob">
-                  <option value="1">Chapter 1</option>
-                  <option value="2">Chapter 2</option>
-                  <option value="3">Chapter 3</option>
-                  <option value="A">Chapter A</option>
-                  <option value="100">Chapter ...</option>
+                  <option value="1">Problem A/1</option>
+                  <option value="2">Problem A/2</option>
+                  <option value="3">Problem A/3</option>
+                  <option value="0">Problem A/...</option>
                 </select>
               </div>
               <input type="submit" value="Solve" class="btn btn-block btn-primary">
