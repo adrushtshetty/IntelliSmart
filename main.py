@@ -18,6 +18,8 @@ def mechQS():
         return redirect(url_for('MechChapter3'))
     elif n=="A":
         return redirect(url_for('MechChapterA'))
+    elif n=="6":
+        return redirect(url_for('MechChapter6'))
     else:
         return redirect(url_for('notDone'))
 
@@ -29,6 +31,95 @@ def MechChapter3():
 @app.route('/EnggMechanicsA')
 def MechChapterA():
     return render_template("ChapterA.html")
+
+@app.route('/EnggMechanics6')
+def MechChapter6():
+    return render_template("Chapter6.html")
+
+@app.route('/EnggMechanics6', methods=['POST'])
+def prpbSlc6():
+    n=request.form['prob']
+    if n=="3":
+        return redirect(url_for('a_6'))
+    else:
+        return redirect(url_for('notDone'))
+
+@app.route('/EnggMechanic6_3')
+def a_6():
+    return render_template("6-3.html")
+
+@app.route('/EnggMechanicTXT6_3')
+def txt6_3():
+    return render_template("TxtBook6-3.html")
+
+@app.route('/EnggMechanicsCust6-3')
+def cs6_3():
+    return render_template("Cust6-3.html")
+
+@app.route('/EnggMechanicsCust6-3',methods=['POST'])
+def inputcs6_3():
+    import math
+    m = float(request.form['mass'])
+    P = float(request.form['P'])
+    a=float(request.form['a'])
+    t=float(request.form['t'])
+    s=float(request.form['s'])
+    k = float(request.form['k'])
+    g=9.81
+    cosa = math.cos(math.radians(a))
+    sina = math.sin(math.radians(a))
+    cost = math.cos(math.radians(t))
+    sint = math.sin(math.radians(t))
+    N=abs((m*g*cost)-(P*sina))
+    Ff=N*s
+    direc=""
+    Ft=abs((m*g*sint)-(P*cosa))
+    Pv = m * g * (((s * cost) + sint) / ((cosa) + (s * sina)))
+    if Ft==0.0:
+        check1="NoFriction"
+    if Ff >=Ft:
+        check1 = "Ff"
+        if (m*g*sint) > (P*cosa):
+            direc="UP"
+            Ff1 = Ft
+        elif (m*g*sint) < (P*cosa):
+            direc="DOWN"
+            Ff1=Ft
+        else:
+            check1="NoFriction"
+        return render_template("CS6-3.html", St='{}'.format(t), Sa='{}'.format(a), Ss='{}'.format(s), Sk='{}'.format(k),
+                               SP='{}'.format(P), SN='{}'.format(N), SFt='{}'.format(Ft), SFf='{}'.format(Ff),
+                               SFf1='{}'.format(Ff1), Sdirec='{}'.format(direc), SPp='{}'.format(Pv),
+                               check='{}'.format(check1))
+
+
+    else:
+        check1="Ft"
+        if (m*g*sint) > (P*cosa):
+            direc="UP"
+            Ff1 = N * k
+        else:
+            direc="DOWN"
+            Ff1 = N * k
+        return render_template("CS6-3.html", St='{}'.format(t), Sa='{}'.format(a), Ss='{}'.format(s), Sk='{}'.format(k),
+                               SP='{}'.format(P), SN='{}'.format(N), SFt='{}'.format(Ft), SFf='{}'.format(Ff),
+                               SFf1='{}'.format(Ff1), Sdirec='{}'.format(direc), SPp='{}'.format(Pv),
+                               check='{}'.format(check1))
+
+
+
+
+
+
+    # if A==0.0:
+    #     chk="zeroError"
+    #     return render_template("CustA-3.html",error='{}'.format(chk))
+    # else:
+    #     Ix=(A*(kx**2))
+    #     Iz=Ix+(Iy*1000)
+    #     kz=(Iz/A)**0.5
+    #     return render_template("CSA-3.html",SIy='{}'.format(Iy),SIx='{}'.format(Ix),SA='{}'.format(A),Skx='{}'.format(kx),SIz='{}'.format(Iz),Skz='{}'.format(kz))
+
 
 @app.route('/EnggMechanicsA', methods=['POST'])
 def prpbSlcA():

@@ -63,7 +63,7 @@
         <h2>Engineering Mechanics Statics </h2>
         <ol>
           <li><a href="/EnggMechanics">Search</a></li>
-          <li><a href="/EnggMechanicA_3">A/3</a></li>
+          <li><a href="/EnggMechanic6_3">6/3</a></li>
         </ol>
 
       </div>
@@ -77,34 +77,50 @@
 
         <div class="row gy-4" data-aos="fade-up">
           <div class="col-lg-4">
-            <img src="static\assets2\assets\img\blog\csa-3.png" class="img-fluid" alt="">
+            <img src="static\assets2\assets\img\blog\cs6-3.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8">
             <div class="content ps-lg-5">
-              <h3>Problem A/3</h3>
+              <h3>Problem 6/3</h3>
               <p>
-                                The narrow rectangular strip has an area of 300
-mm<sup>2</sup>, and its moment of inertia about the y-axis is
-35x 10<sup>3</sup> mm<sup>4</sup> . Obtain a close approximation to the
-polar radius of gyration about point O.
+                                The force P is applied to the 50-kg block when it is at
+rest. Determine the magnitude and direction of the
+friction force exerted by the surface on the block if
+(a) P = 0, (b) P = 200 N, and (c) P = 250 N. (d) What
+value of P is required to initiate motion up the
+incline? The coefficients of static and kinetic friction
+between the block and the incline are μ<sub>s</sub>. = 0.25 and
+μ<sub>k</sub> = 0.20, respectively
               </p>
-              <form action="{{ url_for('inputcsA_3')}}" method="post" role="form" >
+              <form action="{{ url_for('inputcs6_3')}}" method="post" role="form" >
               <div class="row">
                   {% if error == "zeroError" %}
                   <div class="alert alert-danger"><strong>Invalid!</strong> Area cannot be zero ! Zero Division Error.</div>
                   {% endif %}
 
                 <div class="col-md-6 form-group">
-                  <input type="text" name="area" class="form-control" id="area" placeholder="The area of narrow strip (in mm^2)." required>
+                  <input type="text" name="mass" class="form-control" id="mass" placeholder="The mass of the block in kg." required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="Iy" id="Iy" placeholder="Moment of Inertia about y - axis (in 10^3 mm^4)" required>
+                  <input type="text" class="form-control" name="P" id="P" placeholder="The force Applied P in N" required>
                 </div>
               </div>
                   <br>
 <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="kx" class="form-control" id="kx" placeholder="The distance between rod and x-axis (α in mm)." required>
+                  <input type="text" name="a" class="form-control" id="a" placeholder="The angle α in degrees." required>
+                </div>
+    <div class="col-md-6 form-group">
+                  <input type="text" name="t" class="form-control" id="t" placeholder="The angle θ in degrees." required>
+                </div>
+              </div>
+                  <br>
+                  <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="s" class="form-control" id="s" placeholder="The coefficient of static friction." required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="k" id="k" placeholder="The coefficient of kinetic friction." required>
                 </div>
               </div>
               <br>

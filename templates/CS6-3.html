@@ -63,7 +63,7 @@
         <h2>Engineering Mechanics Statics </h2>
         <ol>
           <li><a href="/EnggMechanics">Search</a></li>
-          <li><a href="/EnggMechanicsP2-23">2/23</a></li>
+          <li><a href="/EnggMechanic6_3">6/3</a></li>
         </ol>
 
       </div>
@@ -77,60 +77,68 @@
 
         <div class="row gy-4" data-aos="fade-up">
           <div class="col-lg-4">
-            <img src="static\assets2\assets\img\blog\csa-3.png" class="img-fluid" alt="">
+            <img src="static\assets2\assets\img\blog\cs6-3.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8">
             <div class="content ps-lg-5">
-              <h3>Problem A/3</h3>
+              <h3>Problem 6/3</h3>
               <p>
-                The narrow rectangular strip has an area of 300
-mm<sup>2</sup>, and its moment of inertia about the y-axis is
-35x 10<sup>3</sup> mm<sup>4</sup> . Obtain a close approximation to the
-polar radius of gyration about point O.
+                                The force P is applied to the 50-kg block when it is at
+rest. Determine the magnitude and direction of the
+friction force exerted by the surface on the block if
+(a) P = 0, (b) P = 200 N, and (c) P = 250 N. (d) What
+value of P is required to initiate motion up the
+incline? The coefficients of static and kinetic friction
+between the block and the incline are μ<sub>s</sub>. = 0.25 and
+μ<sub>k</sub> = 0.20, respectively
               </p>
               <hr>
               <h5>Answer: </h5>
              <p>
-                We know that I<sub>x</sub>=k<sub>x</sub><sup>2</sup>A
-                <br>
-                Where  <span style=" font-weight: bold;">k<sub>x</sub></span>
-                   is called the <span style=" font-weight: bold;">radius of gyration</span> about the x - axis
-                <br>
-                <span style=" font-weight: bold;">I<sub>x</sub>=k<sub>x</sub><sup>2</sup>A</span>
-                <br>
-                I<sub>x</sub>={{SA}} mm<sup>2</sup> . ({{Skx}}mm)<sup>2</sup>
-              <br>
-                <span style=" font-weight: bold;">I<sub>x</sub>={{SIx}} mm<sup>4</sup></span>
-              <br>
-              <br>
-                Given: Moment of inertia about y-axis, <span style=" font-weight: bold;">I<sub>y</sub>={{SIy}}x10<sup>3</sup> mm<sup>4</sup></span>
-<br>
-                <br>
-              Now we know that Polar moment of inertia
-              <br>
-              <span style=" font-weight: bold;">I<sub>z</sub>=I<sub>x</sub> + I<sub>y</sub></span>
-              <br>
-              I<sub>z</sub> = ({{SIy}}x10<sup>3</sup> + {{SIx}} ) mm<sup>4</sup>
-                <br>
-                <span style=" font-weight: bold;">I<sub>z</sub> = {{SIz}} mm<sup>4</sup></span>
-              <br>
-              <br>
-              <br>
-              Polar radius oif gyration about point O
-                <br>
-                <span style=" font-weight: bold;">I<sub>z</sub>=k<sub>z</sub><sup>2</sup>A</span>
-              <br>
-              k<sub>z</sub><sup>2</sup>=I<sub>z</sub> / A
-              <br>
-              k<sub>z</sub> = &radic;(I<sub>z</sub> / A)
-              <br>
-              k<sub>z</sub> = &radic;({{SIz}} / {{SA}})
-              <br>
-              <span style=" font-weight: bold;">k<sub>z</sub> = {{Skz}} mm</span>
-                <hr>
+                  Given:<br> θ = {{St}}<br> α = {{Sa}}<br>μ<sub>s</sub> = {{Ss}}<br>μ<sub>k</sub> = {{Sk}} <br>
 
-              </p>
+
+                  P = {{SP}}
+                  <br>
+                 <br>
+                  <span style=" font-weight: bold;">N = | mgcosθ-Psinα |</span><br>
+                  N = {{SN}} N<br><br>
+                  <span style=" font-weight: bold;">F<sub>t</sub> = | mgsin15 - Pcos20 |</span> [Tractive Force]<br>
+                  F<sub>t</sub> = {{SFt}} N<br><br>
+                  <span style=" font-weight: bold;">F<sub>f</sub> = N x μ<sub>s</sub></span> [Static Friction]<br>
+                  F<sub>f</sub> = {{SFf}} N<br><br>
+                 {% if check == "Ft" %}
+                       <br>Since F<sub>f</sub> < F<sub>t</sub>,<br>
+                      <span style=" font-weight: bold;">F<sub>f</sub> = N x μ<sub>k</sub></span> [Kinetic Friction] <br>
+                      <span style=" font-weight: bold;">F<sub>f</sub> = {{SFf1}} N</span><br>
+                     <span style=" font-weight: bold;">Direction of F<sub>f</sub> is {{Sdirec}} the incline</span><br>
+                     Value of P is required to initiate motion up the incline is <br>
+                     <span style=" font-weight: bold;">P = {{SPp}} N</span>
+                 {% endif %}
+                 {% if check == "Ff" %}
+                     <br>Since F<sub>f</sub> > F<sub>t</sub>,<br>
+                      <span style=" font-weight: bold;">F<sub>f</sub> = F<sub>t</sub></span>  <br>
+                      <span style=" font-weight: bold;">F<sub>f</sub> = {{SFf1}} N</span><br>
+                     <span style=" font-weight: bold;">Direction of F<sub>f</sub> is {{Sdirec}} the incline</span><br>
+                         Value of P is required to initiate motion up the incline is <br>
+                         <span style=" font-weight: bold;">P = {{SP}} N</span>
+                 {% endif %}
+
+                 {% if check == "NoFriction" %}
+                     <br>Since F<sub>t</sub> = 0,<br>
+                      <span style=" font-weight: bold;">F<sub>f</sub> = 0 </span>  <br>
+                     <span style=" font-weight: bold;">There is no direction in which F<sub>f</sub> will act</span><br>
+                         Value of P is required to initiate motion up the incline is <br>
+                         <span style=" font-weight: bold;">P = {{SP}} N</span>
+                 {% endif %}
+
+
+
+
+                  <br>
+                  <br>
               <br>
+             </p>
             </div>
           </div>
 
